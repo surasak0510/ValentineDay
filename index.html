@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <!-- GOOGLE fONTS -->
+    <!-- Pacifico & Itim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Pacifico&display=swap" rel="stylesheet">
+    <!--              -->
+    <title>Valentine Day Ben ❤️</title>
+</head>
+
+<body>
+    <audio id="background-music" loop>
+        <source src="/public/SERIOUSBACON.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <img class="paperHeart paperHeart1" style="--time: 0s" src="/public/PIC1.PNG" alt="">
+        <img class="paperHeart paperHeart2" style="--time: 1s" src="/public/PIC3.PNG" alt="">
+        <img class="paperHeart paperHeart3" style="--time: .5s" src="/public/PIC4.jpg" alt="">
+        <img class="paperHeart paperHeart4" style="--time: 1.5s" src="/public/PIC5.jpg" alt="">
+        <img class="paperHeart paperHeart5" style="--time: .5s" src="/public/PIC6.jpg" alt="">
+        <img class="paperHeart paperHeart6" style="--time: 2s" src="/public/PIC7.jpg" alt="">
+        <img class="paperHeart paperHeart8" style="--time: 3s" src="/public/PIC8.jpg" alt="">
+        <img class="paperHeart paperHeart1" style="--time: 2.5s" src="/public/PIC9.jpg" alt="">
+        <img class="paperHeart paperHeart2" style="--time: 1s" src="/public/PIC10.jpg" alt="">
+        <img class="paperHeart paperHeart3" style="--time: 2.5s" src="/public/PIC11.jpg" alt="">
+        <img class="paperHeart paperHeart4" style="--time: 3s" src="/public/PIC12.jpg" alt="">
+        <img class="paperHeart paperHeart5" style="--time: 3.5s" src="/public/PIC13.jpg" alt="">
+        <img class="paperHeart paperHeart6" style="--time: 4s" src="/public/PIC14.jpg" alt="">
+        <img class="paperHeart paperHeart8" style="--time: 3.5s" src="/public/PIC15.jpg" alt="">
+        <img class="paperHeart paperHeart4" style="--time: 4s" src="/public/PIC16.jpg" alt="">
+
+
+        <div class="boxTitle">
+            <p class="firstTitle partTitle">Happy</p>
+            <p class="secondTitle partTitle">Valentine</p>
+            <p class="thirdTitle partTitle">Ben</p>
+        </div>
+
+        <div class="boxCloud">
+            <div class="cloud"></div>
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+
+            <div class="btnBox">
+                <div class="cloudBtn"></div>
+                <button class="openBtn" onclick="playMusic()">Click</button>
+            </div>
+        </div>
+
+        <div class="cardValentine">
+            <div class="left">
+                <div class="leftFront">
+                    <div class="boxShadow">
+                        <div class="boxTitleCard"></div>
+                    </div>
+
+                    <p class="des">OPEN</p>
+                </div>
+                <div class="leftBack">
+                    <img class="artHeart" src="/public/PIC2.JPG" alt="">
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="rightContent">
+                    <p class="letterContent"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="audioControl">
+        <button id="muteBtn" onclick="toggleMute()"><img id="muteIcon" src="/public/sound_max_fill.svg" alt="Mute Icon" width="24"></button>
+        <div class="volumeContainer">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+            <span class="tooltip" id="volumeTooltip">100%</span>
+        </div>
+    </div>
+    
+    
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
