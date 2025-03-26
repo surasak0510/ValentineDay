@@ -103,10 +103,11 @@ left.addEventListener("click", () => {
 
 document.getElementById("showPdfBtn").addEventListener("click", function () {
     var pdfContainer = document.getElementById("pdfContainer");
-    var pdfBook = document.querySelector(".pdf-book");
+    var pdfFrame = document.getElementById("pdfFrame");
 
+    // ใช้ Google Docs Viewer แทน
+    pdfFrame.src = "https://docs.google.com/gview?url=" + window.location.origin + "/OneMonth.pdf&embedded=true";
+    
     pdfContainer.style.display = "block";
-    pdfBook.classList.add("open");
-
     this.style.display = "none";  // ซ่อนปุ่มเมื่อกดแล้ว
 });

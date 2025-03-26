@@ -38,7 +38,7 @@ html, body {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
     padding: 15px;
     max-width: 100%;
-    height: 500px; /* ปรับให้เหมาะกับมือถือ */
+    height: 80vh; /* ให้ iframe เต็มจอ */
     overflow: hidden;
     position: relative;
 }
@@ -47,10 +47,9 @@ html, body {
     width: 100%;
     height: 100%;
     border: none;
-    overflow: auto; /* เปิดการเลื่อน */
-    touch-action: pan-y; /* ให้รองรับการลากขึ้นลง */
-    -webkit-overflow-scrolling: touch; /* ทำให้เลื่อนลื่นบน iOS */
+    overflow: hidden;
 }
+
 
 .pdf-book.open {
     transform: rotateY(0deg);
