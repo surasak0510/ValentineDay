@@ -3,14 +3,13 @@ var message = '/message.txt'
 var letterContent = ''
 
 fetch(message)
-    .then(response => response.text())  // อ่านไฟล์เป็นข้อความ
+    .then(response => response.text())
     .then(data => {
-        // console.log(data);  // แสดงผลใน Console
         letterContent = data;
     })
     .catch(error => {
         console.error('Error loading file:', error);
-        letterContent = 'error: ' + error.message
+        letterContent = 'error: ' + error.message;
     });
 
 
@@ -18,15 +17,31 @@ durationWrite = 50
 
 
 function effectWrite() {
-    var boxLetter = document.querySelector(".letterContent")
-    letterContentSplited = letterContent.split("")
+    var boxLetter = document.querySelector(".letterContent");
+    var pdfButton = document.getElementById("showPdfBtn");
+
+    if (!letterContent) {  
+        setTimeout(effectWrite, 100);
+        return;
+    }
+
+    boxLetter.innerHTML = '';  
+    pdfButton.style.display = "none";  
+
+    let letterContentSplited = letterContent.split("");
 
     letterContentSplited.forEach((val, index) => {
         setTimeout(() => {
-            boxLetter.innerHTML += val
-        }, durationWrite * index)
-    })
+            boxLetter.innerHTML += val;
+            if (index === letterContentSplited.length - 1) {
+                setTimeout(() => {
+                    pdfButton.style.display = "inline-block";  
+                }, 500);
+            }
+        }, durationWrite * index);
+    });
 }
+
 
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -72,15 +87,26 @@ openBtn.addEventListener("click", () => {
 })
 
 var cardValentine = document.querySelector(".cardValentine")
+var left = document.querySelector(".left")
 
-cardValentine.addEventListener("click", () => {
-    cardValentine.classList.toggle("open")
+left.addEventListener("click", () => {
+    cardValentine.classList.toggle("open");
 
-    if (cardValentine.className.indexOf("open") != -1) {
-        setTimeout(effectWrite, 500)
+    if (cardValentine.classList.contains("open")) {
+        setTimeout(effectWrite, 500);
     } else {
         setTimeout(() => {
-            document.querySelector(".letterContent").innerHTML = ""
-        }, 1000)
+            document.querySelector(".letterContent").innerHTML = "";
+        }, 1000);
     }
-})
+});
+
+document.getElementById("showPdfBtn").addEventListener("click", function () {
+    var pdfContainer = document.getElementById("pdfContainer");
+    var pdfBook = document.querySelector(".pdf-book");
+
+    pdfContainer.style.display = "block";
+    pdfBook.classList.add("open");
+
+    this.style.display = "none";  // ซ่อนปุ่มเมื่อกดแล้ว
+});
